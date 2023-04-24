@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="hospital_root_menu"
+              name="Hospital"
+              web_icon="vedant_hospital,static/description/hospital.png"
+              sequence="0">
+    </menuitem>
+
+    <menuitem id="hospital_patient_master"
+              name="Patient_Details"
+              parent="hospital_root_menu"
+              sequence="0">
+
+    </menuitem>
+
+
+    <menuitem id="hospital_appointment_master"
+              name="Appointments"
+              parent="hospital_root_menu"
+              sequence="20">
+
+    </menuitem>
+
+
+
+</odoo>
