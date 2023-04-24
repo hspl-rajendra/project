@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+<!--    dvfdbdfvdzbdfb-->
      <record id="view_hospital_appointment_tree" model="ir.ui.view">
             <field name="name">hospital.appointment.tree</field>
             <field name="model">hospital.appointment</field>
