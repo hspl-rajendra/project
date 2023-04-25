@@ -8,7 +8,7 @@
     'author':'hspl',
     'website': 'https://www.odoo.com/app/invoicing',
     'description':"""Hospital managment system""",
-    'depends': ['mail','product'],
+    'depends': ['base','mail','product'],
     'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',
@@ -16,6 +16,7 @@
         'views/male_patient_view.xml',
         'views/female_patient_view.xml',
         'views/appointment_view.xml',
+        'views/patient_tag_view.xml'
 
     ],
     'demo': [

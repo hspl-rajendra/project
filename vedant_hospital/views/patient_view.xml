@@ -1,70 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-     <record id="view_hospital_patient_tree" model="ir.ui.view">
-            <field name="name">hospital.patient.tree</field>
-            <field name="model">hospital.patient</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="name" string="Patient Name"/>
-                    <field name="ref"/>
-                    <field name="age"/>
-                    <field name="gender"/>
-                </tree>
-            </field>
-        </record>
+    <record id="view_hospital_patient_tree" model="ir.ui.view">
+        <field name="name">hospital.patient.tree</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Patient Name"/>
+                <field name="ref"/>
+                <field name="age"/>
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
     <record id="view_hospital_patient_form" model="ir.ui.view">
-            <field name="name">hospital.patient.form</field>
-            <field name="model">hospital.patient</field>
-            <field name="arch" type="xml">
-                <form>
-                    <sheet>
+        <field name="name">hospital.patient.form</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                     <field name="image" widget="image" class="oe_avatar"/>
+                    <group>
                         <group>
-                            <group>
-                                <field name="name"/>
-                                <field name="age"/>
-                                <field name="appointment_id"/>
-                                <field name="date_of_birth"/>
 
-                            </group>
-                            <group>
-                                <field name="ref"/>
-                                <field name="gender"/>
-                                <field name="active" invisible="1"/>
-                            </group>
+                            <field name="name"/>
+                            <field name="age"/>
+                            <field name="appointment_id"/>
+                            <field name="date_of_birth"/>
                         </group>
-                    </sheet>
-                    <div class="oe_chatter">
-                        <field name="message_follower_ids" groups="base.group_user"/>
-                        <field name="message_ids"/>
-                    </div>
-                </form>
-            </field>
-        </record>
+                        <group>
+                            <field name="ref"/>
+                            <field name="gender"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
 
     <record id="view_hospital_patient_search" model="ir.ui.view">
-            <field name="name">hospital.patient.search</field>
-            <field name="model">hospital.patient</field>
-            <field name="arch" type="xml">
-                <search>
-                    <field name="name" string="Patient Name" filter_domain="['|',('name', 'ilike', self), ('ref', 'ilike', self)]"/>
-                    <field name="ref"/>
-                    <field name="age"/>
-                    <field name="gender"/>
-                    <filter name="filter_male" string="Male" domain="[('gender','=','male')]"/>
-                    <filter name="filter_female" string="Female" domain="[('gender','=','female')]"/>
-<!--                    <separator/>-->
-<!--                    <filter name="filter_kids" string="kids" domain="[('age','&lt;=','5')]"/>-->
-<!--                    <separator/>-->
-                    <filter name="filter_archived" string="Archive" domain="[('active','=','false')]"/>
-                    <group expand="0" string="Group By">
-                        <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>
-                    </group>
-                    <searchpanel>
-                        <field name="gender" icon="fa-users" select="multi" enable_counters="1"/>
-                    </searchpanel>
-                </search>
-            </field>
-        </record>
+        <field name="name">hospital.patient.search</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Patient Name"
+                       filter_domain="['|',('name', 'ilike', self), ('ref', 'ilike', self)]"/>
+                <field name="ref"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <filter name="filter_male" string="Male" domain="[('gender','=','male')]"/>
+                <filter name="filter_female" string="Female" domain="[('gender','=','female')]"/>
+                <!--                    <separator/>-->
+                <!--                    <filter name="filter_kids" string="kids" domain="[('age','&lt;=','5')]"/>-->
+                <!--                    <separator/>-->
+                <filter name="filter_archived" string="Archive" domain="[('active','=','false')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>
+                </group>
+                <searchpanel>
+                    <field name="gender" icon="fa-users" select="multi" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
     <record id="action_hospital_patient" model="ir.actions.act_window">
         <field name="name">Patients</field>
         <field name="type">ir.actions.act_window</field>
@@ -73,8 +76,8 @@
         <field name="context">{'search_default_group_by_gender':1,'search_default_filter_male':1}</field>
         <field name="help" type="html">
             <p class="o_view_noncontent_smiling_face">
-            Create Your First patient!
-           </p>
+                Create Your First patient!
+            </p>
         </field>
 
     </record>
@@ -85,8 +88,6 @@
               sequence="0">
 
     </menuitem>
-
-
 
 
 </odoo>

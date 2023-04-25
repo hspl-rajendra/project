@@ -19,6 +19,12 @@
               name="Appointments"
               parent="hospital_root_menu"
               sequence="20">
+    </menuitem>
+
+    <menuitem id="menu_configuration"
+               name="Configuration"
+               parent="hospital_root_menu"
+               sequence="50">
 
     </menuitem>
 
