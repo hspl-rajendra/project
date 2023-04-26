@@ -22,9 +22,20 @@
     </menuitem>
 
     <menuitem id="menu_configuration"
-               name="Configuration"
-               parent="hospital_root_menu"
-               sequence="50">
+              name="Configuration"
+              parent="hospital_root_menu"
+              sequence="100">
+
+    </menuitem>
+
+
+
+
+    <menuitem id="menu_cancel_appointment"
+               name="cancellation"
+               parent="hospital_appointment_master"
+              action="action_cancel_appointment"
+               sequence="30">
 
     </menuitem>
 

@@ -27,6 +27,11 @@ class HospitalAppointment(models.Model):
     doctor_id = fields.Many2one('res.users', string='Doctor')
     pharmacy_lines_ids = fields.One2many('appointment.pharmacy.lines', 'appointment_id', 'Pharmacy Lines')
     hide_sales_price = fields.Boolean(string="Hide_Sales_Prices")
+    reason = fields.Text(string='Reason')
+
+
+
+
 
     # avatar_images_1920 = fields.Image("Avatar")
 
