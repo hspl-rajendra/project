@@ -21,6 +21,17 @@ class HospitalPatient(models.Model):
     image=fields.Image(string='Image')
     tag_ids=fields.Many2many('patient.tag',string="Tags")
 
+    @api.model
+    def create(self,vals):
+
+        vals['ref']= self.env['ir.sequence'].next_by_code('hospital.patient')
+        return super(HospitalPatient,self).create(vals)
+
+    def write(self,values):
+        if not self.ref:
+            values['ref'] = self.env['ir.sequence'].next_by_code('hospital.patient')
+        return super(HospitalPatient,self).write(values)
+
     @api.depends('date_of_birth')
     def _compute_age(self):
         print("self.........",self)
