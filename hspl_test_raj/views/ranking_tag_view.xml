@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_ranking_tag_tree" model="ir.ui.view">
+        <field name="name">ranking.tag.tree</field>
+        <field name="model">ranking.tag</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="color" widget="color_picker"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_ranking_tag_form" model="ir.ui.view">
+        <field name="name">ranking.tag.form</field>
+        <field name="model">ranking.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" default_focus="1"/>
+                        </group>
+                        <group>
+                            <field name="color" widget="color_picker"/>
+<!--                            <field name="color_2" widget="color_picker"/>-->
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_tags_home_tag" model="ir.actions.act_window">
+        <field name="name">Ranking Tag</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ranking.tag</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_noncontent_smiling_face">
+                Create Your First Tags
+            </p>
+        </field>
+    </record>
+     <menuitem
+            action="action_tags_home_tag"
+            name="Ranking Tag"
+            parent="sale.menu_sale_config"
+            id="menu_ranking_tag"
+
+    />
+</odoo>

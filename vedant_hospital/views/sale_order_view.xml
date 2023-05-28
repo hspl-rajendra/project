@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_order_view_ap" model="ir.ui.view">
+            <field name="name">sale.order.form.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="context">{'testing': True}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="test"/>
+
+                </xpath>
+<!--                 <xpath expr="//notebook" position="inside">-->
+<!--                    <page string="Staff">-->
+<!--                        <group>-->
+<!--                            <field name="test"/>-->
+<!--                            <field name="patient_ids"/>-->
+<!--                        </group>-->
+
+<!--                    </page>-->
+<!--                </xpath>-->
+
+            </field>
+        </record>
+
+        <record id="view_order_view_ap" model="ir.ui.view">
+            <field name="name">sale.order.tree.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="test"/>
+
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

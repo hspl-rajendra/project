@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="vendor_report_wizard_form" model="ir.ui.view">
+            <field name="name">vendor.report.wizard.form</field>
+            <field name="model">vendor.report.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="vendor_ids" widget="many2many_tags" domain="[('supplier_rank','>', 0)]"/>
+                    </group>
+
+                    <footer>
+                        <button string="Vendor Report Print" name="vendor_report_print" type="object"
+                                class="oe_highlight"
+                                data-hotkey="q"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel" data-hotkey="z"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="vendor_report_wizard_action" model="ir.actions.act_window">
+            <field name="name">Create Vendor report</field>
+            <field name="res_model">vendor.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="vendor_report"
+                  name="Vendor report"
+                  parent="purchase.purchase_report_main"
+                  sequence="2"
+                  action="vendor_report_wizard_action"
+                  groups=""/>
+
+    </data>
+</odoo>

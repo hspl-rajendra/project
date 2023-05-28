@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9853ee2-75b8-474b-9ed2-a1662d3b275f" name="Changes" comment="" />
+    <list default="true" id="b9853ee2-75b8-474b-9ed2-a1662d3b275f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/vedant_hospital/models/abstract.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vedant_hospital/models/operation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vedant_hospital/models/res_config_settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vedant_hospital/models/sale_order.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vedant_hospital/views/basic_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vedant_hospital/views/operation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vedant_hospital/views/res_config_settings_views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vedant_hospital/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/vedant_hospital/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vedant_hospital/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/vedant_hospital/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vedant_hospital/models/appointment.py" beforeDir="false" afterPath="$PROJECT_DIR$/vedant_hospital/models/appointment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vedant_hospital/models/patient.py" beforeDir="false" afterPath="$PROJECT_DIR$/vedant_hospital/models/patient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vedant_hospital/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/vedant_hospital/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vedant_hospital/views/appointment_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vedant_hospital/views/appointment_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vedant_hospital/views/patient_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vedant_hospital/views/patient_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vedant_hospital/wizard/cancel_appointment.py" beforeDir="false" afterPath="$PROJECT_DIR$/vedant_hospital/wizard/cancel_appointment.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2OKwt1HrudGYearAHhU33cLSR7S" />
   <component name="ProjectViewState">
@@ -14,7 +33,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/raju/ws/16.0/repo"
   }
 }]]></component>

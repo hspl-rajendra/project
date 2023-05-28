@@ -10,4 +10,3 @@ class PatientTag(models.Model):
     color = fields.Integer(string="Color")
     active=fields.Boolean(string='Active',default=True)
     # color2 =fields.Char(string="Color 2")
-

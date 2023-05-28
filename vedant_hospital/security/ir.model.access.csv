@@ -1,6 +1,13 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access.hospital.lab,access_hospital_lab,vedant_hospital.model_hospital_lab,base.group_user,1,1,1,1
 access.hospital.patient,access_hospital_patient,model_hospital_patient,base.group_user,1,1,1,1
-access.hospital.appointment,access_hospital_appointment,model_hospital_appointment,base.group_user,1,1,1,1
+access.hospital.appointment,access_hospital_appointment,model_hospital_appointment,,1,1,1,1
 access.appointment.pharmacy.lines,access_appointment_pharmacy_lines,model_appointment_pharmacy_lines,base.group_user,1,1,1,1
 access.patient.tag,access_patient_tag,model_patient_tag,base.group_user,1,1,1,1
 access.cancel.appointment.wizard,access_cancel_appointment_wizard,model_cancel_appointment_wizard,base.group_user,1,1,1,1
+access.hospital.operation,access_hospital_operation,model_hospital_operation,base.group_user,1,1,1,1
+vedant_hospital.access_custom_excel_class,access_custom_excel_class,vedant_hospital.model_custom_excel_class,base.group_user,1,1,1,1
+vedant_hospital.access_lab_employee,access_lab_employee,vedant_hospital.model_lab_employee,base.group_user,1,1,1,1
+vedant_hospital.access_hspl_employee,access_hspl_employee,vedant_hospital.model_hspl_employee,base.group_user,1,1,1,1
+vedant_hospital.access_appointment_report_wizard,access_appointment_report_wizard,vedant_hospital.model_appointment_report_wizard,base.group_user,1,1,1,1

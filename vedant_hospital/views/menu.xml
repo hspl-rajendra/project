@@ -10,9 +10,11 @@
     <menuitem id="hospital_patient_master"
               name="Patient_Details"
               parent="hospital_root_menu"
+
               sequence="0">
 
     </menuitem>
+<!--     groups="vedant_hospital.group_hospital_appointment_admin"-->
 
 
     <menuitem id="hospital_appointment_master"
@@ -28,13 +30,21 @@
 
     </menuitem>
 
+    <menuitem id="menu_report"
+              name="Appointments Print"
+              parent="hospital_appointment_master"
+              action="action_report_appointment"
+              sequence="35">
+
+    </menuitem>
+
 
 
 
     <menuitem id="menu_cancel_appointment"
                name="cancellation"
                parent="hospital_appointment_master"
-              action="action_cancel_appointment"
+               action="action_cancel_appointment"
                sequence="30">
 
     </menuitem>

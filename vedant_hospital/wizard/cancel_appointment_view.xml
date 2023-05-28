@@ -9,6 +9,7 @@
                         <group>
                             <field name="appointment_id" domain="[('state', 'in',['in_consultation','done'])]"/>
                             <field name="reason" />
+                            <field name="cancel_appointment_time"/>
                         </group>
                         <group>
                             <footer>

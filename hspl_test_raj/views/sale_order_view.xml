@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_order_view_ap" model="ir.ui.view">
+            <field name="name">sale.order.form.view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//sheet" position="before">
+                    <field name="is_a_member" invisible="1"/>
+                    <widget name="web_ribbon" title="Mebership" bg_color="bg-danger"
+                            attrs="{'invisible': [('is_a_member', '=', False)]}"/>
+
+
+                </xpath>
+
+
+            </field>
+        </record>
+    </data>
+</odoo>

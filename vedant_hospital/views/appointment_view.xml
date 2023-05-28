@@ -9,14 +9,15 @@
                   decoration-info="state =='draft'"
                   decoration-danger="state=='cancel'"
                   decoration-warning="state=='in_consulatation'">
-                <field name="patient_id" default_focus="1"/>
+                <field name="patient_id"/>
                 <field name="ref" optional="hide"/>
                 <field name="gender" optional="hide"/>
                 <field name="appointment_time" optional="show"/>
                 <field name="activity_ids" widget="list_activity"/>
                 <field name="doctor_id" widget="many2one_avatar_user"/>
                 <field name="booking_date"/>
-                <field name="reason" />
+                <field name="reason"/>
+                <field name="progress" widget="progressbar"/>
 
 
                 <field name="state"
@@ -39,6 +40,15 @@
                         <button name="action_done" string="Done"
                                 data-hotkey="v"
                                 type="object" states="in_consultation"/>
+                        <!--                        <button name="action_share_whatsapp" string="Share WP"-->
+                        <!--                                data-hotkey="W"-->
+                        <!--                                type="object"/>-->
+                        <button name="check_orm" string="check"
+                                type="object"/>
+                        <button name="submit" string="Submit" type="object"/>
+                        <!--                        <button name="action_send_mail" string="Send mail"-->
+                        <!--                                data-hotkey="y"-->
+                        <!--                                type="object"/>-->
                         <button name="%(vedant_hospital.action_cancel_appointment)d" string="Cancel" data-hotkey="z"
                                 type="action" states="draft,in_consultation"/>
 <!--                        <button name="action_cancel" string="Cancel"-->
@@ -47,8 +57,10 @@
                         <button name="action_draft" string="Reset to Draft"
                                 data-hotkey="g"
                                 type="object" states="cancel"/>
+
                         <field name="state" widget="statusbar" options="{'clickable': '1'}" nolabel="1"
                                statusbar_visible="draft,in_consultation,done,cancel"/>
+
                     </header>
                     <div class="oe_title">
                         <h1>
@@ -57,20 +69,21 @@
                     </div>
                     <group>
                         <group>
-                            <field name="patient_id" default_focus="1"/>
+                            <field name="partner_id"/>
+                            <field name="patient_id" default_focus="1" options="{'no_open':True 'no_create':True}"/>
                             <field name="ref"/>
                             <field name="gender"/>
                             <field name="doctor_id" widget="many2one_avatar"/>
                             <field name="booking_date" help="Date of booking"/>
-                            <field name="reason" />
-
+                            <field name="reason"/>
+                            <field name="operation"/>
                         </group>
                         <group>
-                            <field name="hide_sales_price" />
-                            <field name="appointment_time" />
-                            <button name="action_test" string="ObjectButton"
+                            <field name="hide_sales_price"/>
+                            <field name="appointment_time"/>
+                            <button name="action_test" string="RedirectButton"
                                     help="A Message will be printed in log"
-                                    confirm="Are you sure to open the patient action ?"
+                                    confirm="Are you sure to Redirect Odoo website ?"
                                     type="object" class="oe_highlight"/>
                             <button name="%(vedant_hospital.action_hospital_patient)d" string="Action Button"
                                     help="On clicking this button you will be redirected to Patients records"
@@ -88,21 +101,23 @@
                                 <tree editable="bottom">
                                     <field name="product_id" optional="hide"/>
                                     <field name="qty"/>
+                                    <field name="price_subtotal"/>
                                     <field name="price_unit"
                                            attrs="{'invisible': [('parent.hide_sales_price', '=', True)]}"/>
+
                                 </tree>
                                 <form>
                                     <group>
                                         <field name="avatar_images_1920"/>
                                         <field name="product_id"/>
                                         <field name="qty"/>
+
                                         <field name="price_unit"
                                                attrs="{'invisible': [('parent.hide_sales_price', '=', True)]}"/>
+<!--                                        <field name="product_ids"/>-->
                                     </group>
                                 </form>
                             </field>
-
-
                         </page>
                     </notebook>
                 </sheet>
@@ -118,11 +133,19 @@
         <field name="name">hospital.appointment.search</field>
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
-            <search>
+            <search  string="Search">
+                <field name="patient_id"  filter_domain="['|',('patient_id', 'ilike', self), ('ref', 'ilike', self)]"/>
+                <field name="ref"/>
+<!--                <group expand="0" string="Group By">-->
+<!--                    <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>-->
+<!--                </group>-->
+
+
 
             </search>
         </field>
     </record>
+
     <record id="action_hospital_appointment" model="ir.actions.act_window">
         <field name="name">Appointments</field>
         <field name="type">ir.actions.act_window</field>
@@ -140,7 +163,9 @@
               name="Appointments"
               action="action_hospital_appointment"
               parent="hospital_appointment_master"
+
               sequence="10">
+<!--        groups="vedant_hospital.group_hospital_appointment_manager"-->
 
     </menuitem>
 

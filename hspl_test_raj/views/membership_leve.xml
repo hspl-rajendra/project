@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="membership_level_tree" model="ir.ui.view">
+        <field name="name">membership.level.tree</field>
+        <field name="model">membership.level</field>
+        <field name="arch" type="xml">
+            <tree string="Membership Leve">
+                <field name="ranking"/>
+                <field name="display_name"/>
+                <field name="tag_ids" widget="many2many_tags"
+                       options="{'color_field': 'color', 'no_create_edit': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="membership_level_form" model="ir.ui.view">
+        <field name="name">membership.leve.form</field>
+        <field name="model">membership.level</field>
+        <field name="arch" type="xml">
+            <form string="Membership Level">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="ranking"/>
+                    </group>
+                    <group>
+                        <field name="display_name"/>
+                        <field name="color" widget="color"/>
+                        <field name="display_name"/>
+
+                        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="membership_level_filter" model="ir.ui.view">
+        <field name="name">membership.level.search</field>
+        <field name="model">membership.level</field>
+        <field name="arch" type="xml">
+            <search string="Search Membership Level">
+                <field name="name"/>
+                <field name="ranking"/>
+                <field name="display_name"/>
+
+            </search>
+        </field>
+    </record>
+
+
+    <record id="action_membership_level_form" model="ir.actions.act_window">
+        <field name="name">membership.level</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">membership.level</field>
+        <field name="view_id" ref="membership_level_tree"/>
+        <field name="search_view_id" ref="membership_level_filter"/>
+    </record>
+
+
+    <menuitem
+            action="action_membership_level_form"
+            name="Membership Level"
+            parent="sale.menu_sale_config"
+            id="menu_membership_level"
+    />
+
+</odoo>
